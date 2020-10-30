@@ -13,7 +13,8 @@ function saveEmails() {
 // Will get the emails and return a list
 function getEmails_(q) {
     var emails = [];
-    // Sheet header collumns
+    // Sheet header columns
+    // Add here any additional field you want to retrieve such as, "Subject", or "Body"
     emails.push(["Date","From Address", "to Address"]);
 
     var threads = GmailApp.search(q);
@@ -27,6 +28,7 @@ function getEmails_(q) {
             var msg = msgs[j];
 
             // Values to get and store
+            // Add here code for the field you added above
             var data = msg.getDate();
             var from = msg.getFrom();
             var to = msg.getTo();
